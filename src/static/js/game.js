@@ -3,7 +3,7 @@ import { updateFood, drawFood } from "./food.js";
 import { outsideGrid } from "./grid.js";
 
 let lastRenderTime = 0;
-let gameBoard = document.querySelector(".board-game");
+let gameBoard = document.querySelector(".board-game")
 let gameOver = false;
 let myStorage = window.localStorage;
 

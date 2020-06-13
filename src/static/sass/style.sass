@@ -1,0 +1,170 @@
+body
+    background: #d2d2d2
+    position: fixed
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    display: flex
+    font-family: 'Balsamiq Sans'
+
+.board-game
+    display: grid
+    width: 50%
+    background-color: #B4DD96
+    grid-template-columns: repeat(21, 1fr)
+    grid-template-rows: repeat(21, 1fr)
+    &::after
+        content: ""
+        display: block
+        padding-bottom: 100%
+
+.score-image
+    height: 30px
+
+.score
+    color: #fff
+    font-size: 27px
+    margin-left: 15px
+    padding-top: 6px
+
+.score-wrapper
+    display: flex
+    align-items: center
+
+.snake
+    background: #26409d
+    z-index: 20
+    &.head
+        background-color: #5076F9 !important
+        border-top-left-radius: 4px
+        border-top-right-radius: 4px
+        position: relative
+        z-index: 100
+        &::before
+            content: '•'
+            line-height: 10px
+            display: flex
+            justify-content: center
+            align-items: center
+            color: #5076F9
+            width: 12px
+            font-size: 18px
+            height: 12px
+            border-radius: 50%
+            background-color: #fff
+            position: absolute
+            top: 7px
+            border: 2px solid #5076F9
+            right: -4px
+        &::after
+            content: '•'
+            line-height: 10px
+            display: flex
+            font-size: 18px
+            justify-content: center
+            align-items: center
+            color: #5076F9
+            width: 12px
+            height: 12px
+            border-radius: 50%
+            background-color: #fff
+            position: absolute
+            top: 7px
+            border: 2px solid #5076F9
+            left: -4px
+    &.eat
+        animation: heartbeat 1s infinite alternate
+
+.tongue
+    position: relative
+    &::after
+        content: ""
+        position: absolute
+        width: 3px
+        height: 3px
+        right: 5px
+        top: 2px
+        border-radius: 50%
+        background-color: #26409d
+    &::before
+        content: ""
+        position: absolute
+        width: 3px
+        height: 3px
+        left: 5px
+        top: 2px
+        border-radius: 50%
+        background-color: #26409d
+
+.mouth
+    position: absolute
+    height: 25px
+    width: 170%
+    border-radius: 20px 20px 0 0
+    border: 3px solid #5076F9
+    top: -20px
+    left: 50%
+    background-color: #1b2859
+    z-index: 80
+    transform: translateX(-50%)
+    &::before
+        content: ""
+        position: absolute
+        width: 0
+        height: 0
+        bottom: 0px
+        left: 15%
+        border-bottom: 4px solid #fff
+        border-left: 2px solid transparent
+        border-right: 2px solid transparent
+    &::after
+        content: ""
+        position: absolute
+        width: 0
+        height: 0
+        bottom: 0px
+        right: 15%
+        border-bottom: 4px solid #fff
+        border-left: 2px solid transparent
+        border-right: 2px solid transparent
+
+.food
+    background-image: url('../images/food.png')
+    background-repeat: no-repeat
+    background-size: contain
+    animation: heartbeat 0.5s infinite alternate
+    transform-origin: center
+    z-index: 10
+
+.game-wrapper
+    display: flex
+    flex-direction: column
+    flex-grow: 1
+    background: yellow
+
+.scoreboard
+    background-color: #4a752c
+    padding: 20px
+    display: flex
+    width: 100%
+
+.board-wrapper
+    display: flex
+    flex-grow: 1
+    justify-content: center
+    align-items: center
+    padding: 60px
+
+.outer-wrapper
+    display: flex
+    flex-grow: 1
+    height: 0
+    background-color: #68A33E
+
+.ml-40
+    margin-left: 40px
+
+@keyframes heartbeat
+    to
+        transform: scale(1.2)

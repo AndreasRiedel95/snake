@@ -3,7 +3,7 @@ import { updateFood, drawFood } from "./food.js";
 import { outsideGrid } from "./grid.js";
 
 let lastRenderTime = 0;
-let gameBoard = document.querySelector(".board-game")
+let gameBoard = document.querySelector(".board-game");
 let gameOver = false;
 let myStorage = window.localStorage;
 
@@ -46,7 +46,7 @@ const mainUpdate = () => {
 };
 
 const mainDraw = () => {
-    document.querySelectorAll('.snake').forEach(e => e.remove());
+	document.querySelectorAll(".snake").forEach((e) => e.remove());
 	drawFood(gameBoard);
 	drawSnake(gameBoard);
 };
